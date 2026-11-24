@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MAVE STORE</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>MAVE STORE</h1>
+    <input type="search" id="search" placeholder="Cari sepatu..." aria-label="Cari produk">
+    <button type="button" onclick="showCart()">🛒 Keranjang (<span id="count">0</span>)</button>
+  </header>
+  <section class="hero">
+    <h2>FIND YOUR STYLE</h2>
+    <p>Temukan sepatu favoritmu</p>
+  </section>
+  <section class="admin">
+    <h2>Tambahkan sepatu favoritmu</h2>
+    <input type="text" id="nama" placeholder="Nama sepatu">
+    <select id="brand" aria-label="Merek sepatu">
+      <option value="Adidas">Adidas</option>
+      <option value="Puma">Puma</option>
+      <option value="New Balance">New Balance</option>
+    </select>
+    <input type="number" id="harga" placeholder="Harga sepatu (Rp)" min="1">
+    <label for="foto">Pilih Foto Sepatu</label>
+    <input type="file" id="foto" accept="image/*">
+    <button type="button" onclick="addProduct()">Tambah Produk</button>
+  </section>
+  <nav aria-label="Filter merek">
+    <button type="button" onclick="filterBrand('Semua')">Semua</button>
+    <button type="button" onclick="filterBrand('Adidas')">Adidas</button>
+    <button type="button" onclick="filterBrand('New Balance')">New Balance</button>
+    <button type="button" onclick="filterBrand('Puma')">Puma</button>
+  </nav>
+  <h2 class="judul">KOLEKSI SEPATU</h2>
+  <main id="products" aria-live="polite"></main>
+  <div id="cart" class="cart" role="dialog" aria-modal="true" aria-label="Keranjang belanja">
+    <h2>Keranjang Belanja</h2>
+    <div id="cartItems"></div>
+    <h3 id="total">Total: Rp0</h3>
+    <button type="button" onclick="checkout()">Checkout</button>
+    <button type="button" onclick="closeCart()">Tutup</button>
+  </div>
+  <footer><p>© 2026 MAVE STORE</p></footer>
+  <script src="js/script.js"></script>
+</body>
+</html>
